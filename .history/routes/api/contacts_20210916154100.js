@@ -24,31 +24,18 @@
 // module.exports = router;
 
 const express = require('express')
-// const contacts = require('../../model/contacts.json')
+
 const contacts = require('../../controllers')
 const router = express.Router()
-const addContact = require('./add')
-const removeContact = require('./del')
-const listContact = require('./getAll')
-const getContactById = require('./getById')
-const updateContact = require('./update')
 
+router.get('/', listContact) 
 
-router.get('/', listContact);
+router.get('/:contactId', getContactById)
 
-router.get('/:contactId', getContactById);
+router.post('/', express.json(), addContact)
 
-router.post('/', express.json(), addContact);
+router.delete('/:contactId', removeContact)
 
-router.delete('/:contactId', removeContact);
-
-router.patch('/:contactId', express.json(), updateContact);
+router.patch('/:contactId', express.json(), updateContact)
 
 module.exports = router;
-module.exports = {
-  addContact,
-  removeContact,
-  listContact,
-  getContactById,
-  updateContact,
-}

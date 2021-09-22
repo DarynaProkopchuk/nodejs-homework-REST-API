@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
+const contacts = require('../../model/index')
 router.get('/', async (req, res, next) => {
   res.json({ message: 'template message' })
 })
@@ -21,7 +21,7 @@ router.patch('/:contactId', async (req, res, next) => {
   res.json({ message: 'template message' })
 })
 
-module.exports = router;
+module.exports = {router, contacts};
 // const express = require('express')
 
 // const { contacts: ctrl } = require('../../controllers')

@@ -24,8 +24,8 @@
 // module.exports = router;
 
 const express = require('express')
-// const contacts = require('../../model/contacts.json')
-const contacts = require('../../controllers')
+// const contacts = require('../../model/index')
+const contacts = require('../../controllers/index')
 const router = express.Router()
 const addContact = require('./add')
 const removeContact = require('./del')
